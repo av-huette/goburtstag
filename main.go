@@ -1361,7 +1361,8 @@ type StatistikDataPoint struct {
 func statistik_parse(raw Sewoberaw, stichtag Datum) (StatistikDataPoint, error) {
 	datum, datumerr := datum_parse(raw.DATENSATZ["GEBURTSDATUM"])
 	if (datumerr != nil) {
-		return StatistikDataPoint{}, datumerr
+		jsonraw, _ := json.Marshal(raw)
+		return StatistikDataPoint{}, errors.New("raw = " +string(jsonraw) + ", datumerr: "+datumerr.Error())
 	}
 	alter := calculate_age(datum, stichtag)
 	geschlecht := raw.DATENSATZ["GESCHLECHT"]
