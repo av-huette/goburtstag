@@ -724,7 +724,7 @@ func mitgliederstatistikhandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	flag.StringVar(&filepath102, "filepath102", filepath102, "a filepath to sewobe102.json file")
 	flag.StringVar(&filepath70, "filepath70", filepath70, "a filepath to sewobe70.json file")
-	flag.StringVar(&filepath158, "filepath158", filepath70, "a filepath to sewobe70.json file")
+	flag.StringVar(&filepath158, "filepath158", filepath158, "a filepath to sewobe158.json file")
 	portPtr := flag.Int("port", 8080, "the port this http server is running under")
 	flag.Parse()
 	port := fmt.Sprint(":", *portPtr)
