@@ -1469,7 +1469,7 @@ func datum(tag, monat, jahr int) Datum {
 func datum_parse(yyyymmdd string) (Datum, error) {
 	t1, e1 := time.Parse(time.RFC3339, yyyymmdd+"T00:00:00+00:00")
 	if (e1 != nil) {
-		return Datum{}, e1
+		return Datum{}, errors.New("yyyymmdd = " +yyyymmdd + ", error: "+e1.Error())
 	} else {
 		return Datum{t1.Day(), int(t1.Month()), t1.Year()}, nil
 	}
