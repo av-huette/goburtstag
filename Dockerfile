@@ -32,4 +32,4 @@ WORKDIR /go/src/app/testdata
 WORKDIR /go/src/app
 
 
-CMD ["./main"]
+CMD ["./start.sh"]
