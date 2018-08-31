@@ -1621,10 +1621,12 @@ func readAndConvert(filepath string) ([]Datarow, error) {
 func readAndParseSewobe(filepath string) (map[string]Sewoberaw, error) {
 	b, err := ioutil.ReadFile(filepath)
 	if err != nil {
+		fmt.Println(err)
 		return map[string]Sewoberaw{}, errors.New("Error A during readAndParseSewobe!")
 	}
 	var m map[string]Sewoberaw
 	if err := json.Unmarshal(b, &m); err != nil {
+		fmt.Println(err)
 		return map[string]Sewoberaw{}, errors.New("Error B during readAndParseSewobe!")
 	}
 	return m, nil
