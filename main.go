@@ -1378,6 +1378,8 @@ func statistik_parse(raw Sewoberaw, stichtag Datum) (StatistikDataPoint, error) 
 		} else if (strings.Contains(kategorie, "aktiv Ka") || strings.Contains(kategorie, "vorl. Ka")) {
 			//Karlsruhe?
 			status = "AktivKA"
+		} else if (strings.Contains(kategorie, "Studentenzimmer Waldhornstr.")) {
+			status = "Hausbewohner"
 		} else {
 			jsonbytes, _ := json.MarshalIndent(raw, "", "    ")
 			var jsonstr = string(jsonbytes)
